@@ -1,0 +1,2 @@
+Trending TOP 20: https://api.giphy.com/v1/gifs/trending?api_key=9VIEFrc21Wlm0BHl30FIcCGqiDFovLq2&limit=20&rating=G
+Searching: https://api.giphy.com/v1/gifs/search?api_key=9VIEFrc21Wlm0BHl30FIcCGqiDFovLq2&q=dogs&limit=25&offset=25&rating=G&lang=pt
