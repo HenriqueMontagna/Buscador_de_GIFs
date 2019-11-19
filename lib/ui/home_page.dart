@@ -101,6 +101,8 @@ class _HomePageState extends State<HomePage> {
   int _getCount(List data) {
     if (_search == null || _search.isEmpty) {
       return data.length;
+    } else if (_offset >= 19) {
+      return data.length + 2;
     } else {
       return data.length + 1;
     }
@@ -133,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                     ["fixed_height"]["url"]);
               },
             );
-          } else {
+          } else if (_search != null && index == 19) {
             return Container(
               child: GestureDetector(
                 child: Column(
@@ -153,6 +155,30 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   setState(() {
                     _offset += 19;
+                  });
+                },
+              ),
+            );
+          } else {
+            return Container(
+              child: GestureDetector(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 70.0,
+                    ),
+                    Text(
+                      "Voltar",
+                      style: TextStyle(color: Colors.white, fontSize: 22.0),
+                    )
+                  ],
+                ),
+                onTap: () {
+                  setState(() {
+                    _offset -= 19;
                   });
                 },
               ),
